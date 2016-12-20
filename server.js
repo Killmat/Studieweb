@@ -1,8 +1,9 @@
 // requires
-var express    = require('express');
+
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
-
+var router     = require('./core/views/default.js');
+var express    = require('express');
 
 var app = express();
 
@@ -11,13 +12,7 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;
 
-// routes for '/'
-var router = express.Router();
-router.get('/', function(req, res) {
-	res.send('<h1>Hello world</h1>')
-})
-
-// routes for ''
+// routes for '/api/'
 var apiRouter = express.Router();
 
 apiRouter.get('/', function(req, res) {

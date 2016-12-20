@@ -1,9 +1,10 @@
 {
-	"name": "studieweb-mathias",
-	"main": "server.js",
-	"dependencies": {
-		"express": "~4.14.x",
-		"mongoose": "~4.7.x",
-		"body-parser": "~1.15.x"
-	}
+  "name": "studieweb-mathias",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "~1.15.x",
+    "express": "~4.14.x",
+    "marked": "^0.3.6",
+    "mongoose": "~4.7.x"
+  }
 }
