@@ -1,0 +1,9 @@
+{
+	"name": "studieweb-mathias",
+	"main": "server.js",
+	"dependencies": {
+		"express": "~4.14.x",
+		"mongoose": "~4.7.x",
+		"body-parser": "~1.15.x"
+	}
+}
