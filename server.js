@@ -2,6 +2,7 @@
 
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
+var apiRouter  = require('./core/views/api.js');
 var router     = require('./core/views/default.js');
 var express    = require('express');
 
@@ -11,13 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;
-
-// routes for '/api/'
-var apiRouter = express.Router();
-
-apiRouter.get('/', function(req, res) {
-	res.json({ message: 'Hello from api!'});
-});
 
 app.use(router);
 app.use('/api', apiRouter);

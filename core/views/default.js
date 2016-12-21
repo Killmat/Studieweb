@@ -1,30 +1,12 @@
 // routes for '/'
 var express    = require('express');
-var fs         = require('fs');
-var marked     = require('marked');
 
 var router = express.Router();
 
-// serve the markdown files at '/' + the name of the file without it's extension.
-markdownFolder = './markdown/';
 
-router.get('/:markdown_file_noext', function(req, res) {
-		fs.readdir(markdownFolder, function(err, markdown) {
-			if (err) throw err;
-			markdown.forEach(function(file) {
-				fs.readFile(markdownFolder + file, 'utf8', function(err, file_content) {
-					if (err) throw err;
-					fileNoExtension = file.slice(0, file.indexOf('.'));
-
-					if (req.params.markdown_file_noext == fileNoExtension) {
-						res.send(marked(file_content));
-					}
-				})
-			})
-		})
-	})
-
-	
+router.get('/', function(req, res) {
+	res.send('Velkommen!')
+})
 
 
 module.exports = router;
